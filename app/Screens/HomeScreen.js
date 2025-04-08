@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View, Button, Alert} from 'react-native';
+import { Text, View, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import mainStyles from '../MainStyle';
 
 export default function HomeScreen() {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
+        <View style={mainStyles.container}>
         <Text> HEJ EMMA </Text>
         <Button
           title="Press me"
