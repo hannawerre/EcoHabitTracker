@@ -1,13 +1,18 @@
 import { StyleSheet } from "react-native";
 
-const mainStyles = StyleSheet.create({
+const mainStyle = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
       backgroundColor: '#fff2cf',
       alignItems: 'center',
       justifyContent: 'center',
     },
+    text: {
+      fontFamily: 'Roboto Mono',
+      color: 'white',
+      fontSize: 30,
+      textAlign: 'center',
+    }
   });
 
-  export default mainStyles
+  export default mainStyle
