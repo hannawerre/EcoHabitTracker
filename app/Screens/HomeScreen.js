@@ -1,6 +1,7 @@
 import { Text, View, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import mainStyle from '../MainStyle';
+import mainStyles from '../MainStyle';
+import BottomNavBar from '../components/NavigationBar';
 
 export default function HomeScreen() {
     const navigation = useNavigation();
@@ -14,6 +15,8 @@ export default function HomeScreen() {
           onPress={() => {navigation.navigate('Transport'); 
           }}
         />
+        {/* Implementerar navbar */}
+         <BottomNavBar active="Home" /> 
         </View>
     );
 }
