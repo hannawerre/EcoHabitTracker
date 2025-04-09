@@ -3,14 +3,14 @@ import { useNavigation } from '@react-navigation/native';
 import mainStyle from '../MainStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function TransportScreen() {
+export default function HabitScreenLayout({questionText, nextScreen, nextButtonText}) {
     const navigation = useNavigation();
     const textStyle = mainStyle.text
 
     return (
         <SafeAreaView style={mainStyle.container}>
                 <View style={styles.habitQuestion}>
-                    <Text style={textStyle}> How did you travel today? </Text>
+                    <Text style={textStyle}> {questionText} </Text>
                 </View>
                 <Pressable 
                     style={styles.closeButton}
@@ -26,9 +26,9 @@ export default function TransportScreen() {
             </View>
             <Pressable 
                 style={styles.nextButton} 
-                onPress={() => {navigation.navigate('Home'); 
+                onPress={() => {navigation.navigate(nextScreen); 
                 }}>
-                    <Text style={textStyle}> NEXT </Text>
+                    <Text style={textStyle}> {nextButtonText} </Text>
             </Pressable>
         </SafeAreaView>
     );

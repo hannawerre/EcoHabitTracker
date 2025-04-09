@@ -3,7 +3,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import HomeScreen from './app/Screens/HomeScreen'
-import TransportScreen from './app/Screens/TransportScreen'
+import TransportScreen from './app/Screens/HabitTrackerScreens/TransportScreen'
+import ShoppingScreen from './app/Screens/HabitTrackerScreens/ShoppingScreen'
+import FoodScreen from './app/Screens/HabitTrackerScreens/FoodScreen'
+import GeneralHabitsScreen from './app/Screens/HabitTrackerScreens/GeneralHabitsScreen'
 import ProfileScreen from './app/Screens/ProfileScreen';
 import CalendarScreen from './app/Screens/CalendarScreen';
 
@@ -42,6 +45,21 @@ const MyStack = () => {
           component={TransportScreen}
           options={{ headerShown: false }} 
           />
+        <Stack.Screen
+        name="Shopping" 
+        component={ShoppingScreen}
+        options={{ headerShown: false }} 
+        />
+        <Stack.Screen
+          name="Food" 
+          component={FoodScreen}
+          options={{ headerShown: false }} 
+          />
+        <Stack.Screen
+          name="GeneralHabits" 
+          component={GeneralHabitsScreen}
+          options={{ headerShown: false }} 
+          />  
         <Stack.Screen
           name="Profile" 
           component={ProfileScreen}
