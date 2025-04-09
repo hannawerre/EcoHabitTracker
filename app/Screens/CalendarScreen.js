@@ -13,4 +13,5 @@ export default function CalendarScreen() {
             <BottomNavBar active="Calendar" /> 
         </View>
     );
+   
 }
