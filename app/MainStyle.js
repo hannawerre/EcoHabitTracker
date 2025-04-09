@@ -10,7 +10,7 @@ const mainStyle = StyleSheet.create({
     text: {
       fontFamily: 'mainFont',
       color: 'white',
-      fontSize: 30,
+      fontSize: 25,
       textAlign: 'center',
     }
   });

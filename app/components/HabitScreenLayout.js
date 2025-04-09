@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import mainStyle from '../MainStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function HabitScreenLayout({questionText, nextScreen, nextButtonText}) {
+export default function HabitScreenLayout({questionText, nextScreen, nextButtonText, content}) {
     const navigation = useNavigation();
     const textStyle = mainStyle.text
 
@@ -17,12 +17,13 @@ export default function HabitScreenLayout({questionText, nextScreen, nextButtonT
                     onPress={() => {navigation.navigate('Home'); 
                     }}>
                         <Image
-                            source={require('../assets/closeCross.png')}
+                            source={require('../assets/images/closeCross.png')}
                             style={styles.image}
                             
                         />
                 </Pressable>
             <View style={styles.options}>
+                {content}
             </View>
             <Pressable 
                 style={styles.nextButton} 
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
       padding: 10,
       alignItems: 'center',
       justifyContent: 'center',
+      marginTop:'5%'
     },
     closeButton: {
         position: 'absolute',
@@ -66,6 +68,7 @@ const styles = StyleSheet.create({
         borderRadius:15,
         alignItems:'center',
         justifyContent: 'center',
+        marginBottom: '13%'
 
     },
   });
