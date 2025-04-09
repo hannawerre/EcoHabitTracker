@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, Dimensions, ScrollView, Modal, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { Text, View, Dimensions, ScrollView, Modal, TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 import { useNavigation } from '@react-navigation/native';
 import mainStyleScroll from '../MainStyleScroll';
 import BottomNavBar from '../components/NavigationBar';
+import ChallangeProgressBar from '../components/ChallangeProgressBar';
 
 
 
@@ -117,14 +118,15 @@ export default function ProfileScreen() {
                     </TouchableWithoutFeedback>
                 </Modal>
             )}
-
+            {/* implementera challanges med progress bar */}
+            <Text style={[mainStyleScroll.text, {fontSize: 20, marginTop: 20}]}>Utmaningar</Text>
+            <ChallangeProgressBar label="Utmaning 1" currentPoints={50} maxPoints={100} />
+            <ChallangeProgressBar label="Utmaning 2" currentPoints={30} maxPoints={80} />
+            <ChallangeProgressBar label="Utmaning 3" currentPoints={70} maxPoints={120} />
              {/* Implementerar navbar */}
              <BottomNavBar active="Profile" /> 
-        </ScrollView>
-
-        
+        </ScrollView>  
     );
-    
 }
 
 
