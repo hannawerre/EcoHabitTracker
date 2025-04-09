@@ -6,7 +6,7 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 export default function HomeScreen() {
     const navigation = useNavigation();
-      // Din array med poäng (kan komma från props, context, eller API)
+      // Array just nu, ersätt med data från databasen senare
       const points = [10, 15, 20, 100]; 
 
       // 1. Summera alla poäng
@@ -23,7 +23,7 @@ export default function HomeScreen() {
         <View style={styles.container}>
         <Text style={styles.text}>Total Points: {totalPoints}</Text>
           <AnimatedCircularProgress
-          size={200}
+          size={170}
           width={12}
           fill={percentage}
           tintColor="#6cdbaeff"
@@ -47,7 +47,7 @@ export default function HomeScreen() {
           style={styles.addButton} 
           onPress={() => {navigation.navigate('Transport'); 
           }}>
-          <Text style={styles.addText}> + Add Daily Habits </Text>
+          <Text style={[mainStyle.text, {fontSize:27}]}> + Add Daily Habits </Text>
         </Pressable>
         {/* Implementerar navbar */}
          <BottomNavBar active="Home" /> 
@@ -84,5 +84,6 @@ const styles = StyleSheet.create({
   addText: {
     color: '#fff',
     fontSize: 25,
+
   },
 });
