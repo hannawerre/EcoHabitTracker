@@ -8,7 +8,7 @@ const mainStyle = StyleSheet.create({
       justifyContent: 'center',
     },
     text: {
-      fontFamily: 'Roboto Mono',
+      fontFamily: 'mainFont',
       color: 'white',
       fontSize: 30,
       textAlign: 'center',
