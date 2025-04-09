@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import mainStyles from '../MainStyle';
 import BottomNavBar from '../components/NavigationBar';
 
-export default function HomeScreen() {
+export default function CalendarScreen() {
     const navigation = useNavigation();
 
     return (
@@ -13,4 +13,5 @@ export default function HomeScreen() {
             <BottomNavBar active="Calendar" /> 
         </View>
     );
+   
 }
