@@ -26,7 +26,7 @@ export default function ProfileScreen() {
                 { date: '2023-03-01', score: 20 },
                 { date: '2023-04-01', score: 60 },
                 { date: '2023-05-01', score: 50 },
-                { date: '2023-06-01', score: 40 },
+                { date: '2023-06-01', score: 0 },
                 { date: '2023-07-01', score: 50 },
                 { date: '2023-08-01', score: 60 },
                 { date: '2023-09-01', score: 40 },
