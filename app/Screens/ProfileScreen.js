@@ -119,10 +119,10 @@ export default function ProfileScreen() {
                 </Modal>
             )}
             {/* implementera challanges med progress bar */}
-            <Text style={[mainStyleScroll.text, {fontSize: 20, marginTop: 20}]}>Utmaningar</Text>
-            <ChallangeProgressBar label="Utmaning 1" currentPoints={50} maxPoints={100} />
-            <ChallangeProgressBar label="Utmaning 2" currentPoints={30} maxPoints={80} />
-            <ChallangeProgressBar label="Utmaning 3" currentPoints={70} maxPoints={120} />
+            <Text style={[mainStyleScroll.text, {fontSize: 20, marginTop: 20}]}>Challanges</Text>
+            <ChallangeProgressBar label="Buy an item second hand" currentPoints={1} maxPoints={1} />
+            <ChallangeProgressBar label="Eat vegetarian fro 5 days" currentPoints={1} maxPoints={5} />
+            <ChallangeProgressBar label="Recycle for 3 days" currentPoints={2} maxPoints={3} />
              {/* Implementerar navbar */}
              <BottomNavBar active="Profile" /> 
         </ScrollView>  
