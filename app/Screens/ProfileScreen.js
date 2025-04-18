@@ -121,7 +121,7 @@ export default function ProfileScreen() {
             {/* implementera challanges med progress bar */}
             <Text style={[mainStyleScroll.text, {fontSize: 20, marginTop: 20}]}>Challanges</Text>
             <ChallangeProgressBar label="Buy an item second hand" currentPoints={1} maxPoints={1} />
-            <ChallangeProgressBar label="Eat vegetarian fro 5 days" currentPoints={1} maxPoints={5} />
+            <ChallangeProgressBar label="Eat vegetarian for 5 days" currentPoints={1} maxPoints={5} />
             <ChallangeProgressBar label="Recycle for 3 days" currentPoints={2} maxPoints={3} />
              {/* Implementerar navbar */}
              <BottomNavBar active="Profile" /> 
