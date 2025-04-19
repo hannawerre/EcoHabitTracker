@@ -2,11 +2,14 @@ import {View, Image, StyleSheet,Pressable} from 'react-native';
 
 
 
-export default function FourOptions({options}) { 
+export default function FourOptions({options, onOptionPress}) { 
     return (
         <View style={styles.gridContainer}>
           {options.map((option) => (
-            <Pressable key={option.id} style={styles.option}>
+            <Pressable 
+              key={option.id} 
+              style={styles.option}
+              onPress={()=> onOptionPress(option.id)}>
               <Image source={option.image} style={styles.icon} />
             </Pressable>
           ))}

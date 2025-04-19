@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import mainStyle from '../MainStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function HabitScreenLayout({questionText, nextScreen, nextButtonText, content}) {
+export default function HabitScreenLayout({questionText, nextScreen, nextButtonText, content, onNext }) {
     const navigation = useNavigation();
     const textStyle = mainStyle.text
 
@@ -25,9 +25,16 @@ export default function HabitScreenLayout({questionText, nextScreen, nextButtonT
             <View style={styles.options}>
                 {content}
             </View>
+
             <Pressable 
                 style={styles.nextButton} 
-                onPress={() => {navigation.navigate(nextScreen); 
+                onPress={() => {
+                    if (onNext) {
+                        onNext(); //kör onNext om den finns på sidan
+                    } else{
+                        navigation.navigate(nextScreen);   //annars navigera som vanligt
+                    }
+                    
                 }}>
                     <Text style={textStyle}> {nextButtonText} </Text>
             </Pressable>

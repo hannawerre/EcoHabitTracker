@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
 import {Text,View, Image, StyleSheet,Pressable} from 'react-native';
 import mainStyle from '../MainStyle';
 
 
-
-export default function ShoppingOptions() { 
+export default function ShoppingOptions({ numberOfItems, setNumberOfItems, boughtSecondHand, setBoughtSecondHand }) { 
   const textStyle=mainStyle.text
-  const [itemCount, setItemCount] = useState(0);
-  const [isSecondHand, setIsSecondHand] = useState(false);
 
   const increaseCount = () => {
-    setItemCount(itemCount + 1);
+    setNumberOfItems(prev => prev + 1);
   };
 
   const decreaseCount = () => {
-    if (itemCount > 0) {
-      setItemCount(itemCount - 1);
-    }
-  }
+    setNumberOfItems(prev => (prev > 0 ? prev - 1 : 0));
+  };
 
   const toggleCheckbox = () => {
-    setIsSecondHand(!isSecondHand);
+    if (numberOfItems > 0) {
+      setBoughtSecondHand(prev => !prev);
+    }
+    
   };
 
     return (
@@ -33,7 +30,7 @@ export default function ShoppingOptions() {
               <Pressable onPress={increaseCount} style={styles.arrowButton}>
                   <Text style={textStyle}>↑</Text>
                 </Pressable>
-                <Text style={styles.counterText}>{itemCount}</Text>
+                <Text style={styles.counterText}>{numberOfItems}</Text>
                 <Pressable onPress={decreaseCount} style={styles.arrowButton}>
                   <Text style={textStyle}>↓</Text>
                 </Pressable>
@@ -41,14 +38,31 @@ export default function ShoppingOptions() {
           </View>
       
         <View style={styles.secondHandContainer}>
-          <View style={styles.secondHandQuestion}>
-            <Text style={[textStyle, {fontSize: 20}]}> Did you buy it second hand? </Text>
-          </View>
-          <Pressable onPress={toggleCheckbox} style={styles.checkboxContainer}>
-            <View style={[styles.checkbox, isSecondHand && styles.checked]}>
-              {isSecondHand && <Text style={styles.checkmark}>✓</Text>}
+        <View style={[
+          styles.secondHandQuestion,
+          {backgroundColor: numberOfItems === 0 ? '#cccccc' : '#55a987',
+            opacity: numberOfItems === 0 ? 0.5 : 1
+          }
+        ]}>
+          <Text style={[
+            textStyle, 
+            {fontSize: 20},
+            {color: numberOfItems === 0 ? '#808080' : '#ffffff'}
+          ]}>
+            Did you buy it second hand?
+          </Text>
+        </View>
+          <Pressable 
+          onPress={toggleCheckbox} 
+          style={[
+            styles.checkboxContainer,
+            {opacity: numberOfItems === 0 ? 0.5 : 1}
+          ]}
+          disabled={numberOfItems === 0} >
+            <View style={[styles.checkbox, boughtSecondHand && styles.checked]}>
+              {boughtSecondHand && <Text style={styles.checkmark}>✓</Text>}
             </View>
-            <Text style={[textStyle, {fontSize: 20}, {color:'#808080ff'}]}>Yes!</Text>
+            <Text style={[textStyle, {fontSize: 20}, {color: numberOfItems === 0 ? '#cccccc' : '#808080'}]}>Yes!</Text>
           </Pressable>
         </View>
         </View> 
@@ -132,4 +146,9 @@ export default function ShoppingOptions() {
         color: 'white',
         fontSize: 18,
       },
+      disabledCheckbox: {
+        backgroundColor: '#cccccc', 
+        borderColor: '#aaaaaa',
+      },
+      
     });

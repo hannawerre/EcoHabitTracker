@@ -1,17 +1,8 @@
-import React, { useState } from 'react';
 import {Text,View, StyleSheet,Pressable} from 'react-native';
 import mainStyle from '../MainStyle';
 
-export default function GeneralOptions({options}) { 
-    const textStyle=mainStyle.text
-    const [selectedOptions, setSelectedOptions] = useState({});
-
-    const toggleCheckbox = (id) => {
-        setSelectedOptions(prevState => ({
-        ...prevState,
-        [id]: !prevState[id]
-        }));
-    };
+export default function GeneralOptions({options, selectedOptions, onToggleOption}) { 
+    const textStyle=mainStyle.text; 
 
     return (
         <View>
@@ -21,9 +12,9 @@ export default function GeneralOptions({options}) {
                 <Text style={[textStyle, {fontSize: 20}]}> {option.phrase} </Text> 
                 </View> 
 
-                <Pressable onPress={() => toggleCheckbox(option.id)} style={styles.checkboxContainer}>
-                    <View style={[styles.checkbox, selectedOptions[option.id] && styles.checked]}>
-                    {selectedOptions[option.id] && <Text style={styles.checkmark}>✓</Text>}
+                <Pressable onPress={() => onToggleOption(option.id)} style={styles.checkboxContainer}>
+                    <View style={[styles.checkbox, selectedOptions.includes(option.id) && styles.checked]}>
+                    {selectedOptions.includes(option.id) && <Text style={styles.checkmark}>✓</Text>}
                     </View>
                 </Pressable>
             

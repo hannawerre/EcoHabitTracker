@@ -9,6 +9,8 @@ import FoodScreen from './app/Screens/HabitTrackerScreens/FoodScreen'
 import GeneralHabitsScreen from './app/Screens/HabitTrackerScreens/GeneralHabitsScreen'
 import ProfileScreen from './app/Screens/ProfileScreen';
 import CalendarScreen from './app/Screens/CalendarScreen';
+import { PointsProvider } from './app/context/PointsContext';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -80,6 +82,13 @@ const MyStack = () => {
   );
 };
 
-export default MyStack;
+//bakat in MyStack här
+export default function App() {
+  return (
+    <PointsProvider>
+      <MyStack />
+    </PointsProvider>
+  );
+}
 
 
