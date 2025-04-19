@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold",
         marginBottom: 5,
+        color: "#6cdbaeff",
     },
     progressBar: {
         height: 20,
